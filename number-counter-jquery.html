@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+
+/*body {
+	background: #40E0D0;
+}*/
+
+/*/ start count stats /*/ 
+
+section#counter-stats {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.stats {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stats .fa {
+  color: #008080;
+  font-size: 60px;
+}
+
+/*/ end count stats /*/
+	</style>
+</head>
+<body>
+<!-- start count stats -->
+
+<section id="counter-stats" class="wow fadeInRight" data-wow-duration="1.4s">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-3 stats">
+				<i class="fa fa-code" aria-hidden="true"></i>
+				<div class="counting" data-count="900000">0</div>
+				<h5>Lines of code</h5>
+			</div>
+
+			<div class="col-lg-3 stats">
+				<i class="fa fa-check" aria-hidden="true"></i>
+				<div class="counting" data-count="280">0</div>
+				<h5>Projects done</h5>
+			</div>
+
+			<div class="col-lg-3 stats">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<div class="counting" data-count="75">0</div>
+				<h5>Happy clients</h5>
+			</div>
+
+			<div class="col-lg-3 stats">
+				<i class="fa fa-coffee" aria-hidden="true"></i>
+				<div class="counting" data-count="999">0</div>
+				<h5>Cups of coffee</h5>
+			</div>
+
+
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- end container -->
+
+</section>
+
+<!-- end cont stats -->
+</body>
+</html>
+
+<script type="text/javascript">
+	// number count for stats, using jQuery animate
+
+$('.counting').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 3000,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+  
+
+});
+</script>
